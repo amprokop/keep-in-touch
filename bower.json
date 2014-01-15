@@ -1,0 +1,17 @@
+{
+  "name": "keepintouch",
+  "version": "0.0.0",
+  "homepage": "https://github.com/joeyyang/keepintouch",
+  "authors": [
+    "Joey Yang <joey@joeyyang.com>"
+  ],
+  "description": "keep in touch with yr Facebook friends, or don't",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

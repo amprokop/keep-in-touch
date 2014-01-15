@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'VeraMono';
+  src: url('resources/VeraMono.ttf');
+/*  font-family: 'Essays1743';
+  src: url('resources/Essays1743.ttf');*/
+}
+
+body {
+  background: #2E3034;
+  /*background: white;*/
+  font-family: 'VeraMono';
+  color: #CFC7AD;
+  font-size: 50px;
+  -webkit-font-smoothing: subpixel-rendering;
+  -webkit-transition:background .4s ease-in; 
+  -webkit-transition:color .4s ease-in; 
+}
+
+textarea {
+ font-family: inherit;
+ font-size: inherit;
+ resize: none;
+}
+
+textarea:focus{
+  outline: 0;
+}
+
+#formcontainer {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+}
+
+#text {
+  margin-left:auto;
+  margin-right:auto;
+  width: 70%;
+  position: relative;
+  top: 300px;
+}
+
+#inputcontainer {
+  top: 33%;
+  background: #2E3034;
+  border: 0px solid;
+  line-height: 150%;
+  font-family: 'VeraMono';
+  display: block;
+  padding: 5px;
+  margin: 0 auto;
+  color: #CFC7AD;
+  font-size: 30px;
+  -webkit-transition:background .4s ease-in; 
+  -webkit-transition:color .4s ease-in; 
+}
+
+
+#timer {
+  bottom: 1%;
+  right: 1%;
+}
+
+#wordcount {
+  bottom: 1%;
+  left: 1%;
+}
+
+#save-bar {
+  right: 1%;
+  top: 1%;
+}
+
+#save-export:hover, #delete-local-storage:hover, #timer:hover {
+  color: #C6E2FF;
+  cursor: pointer;
+}
+
+#save-export {
+  margin-right: 25px;
+}
+
+#wordcount, #save-bar, #timer {
+  font-size: 18px;
+  position:fixed;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+}
+
+#wordcount.fade-out, #save-bar.fade-out, #timer.fade-out {
+  opacity:0;
+}
+
+#wordcount.fade-in, #save-bar.fade-in, #timer.fade-in {
+  opacity:1;
+}
+
+body.pulse, #inputcontainer.pulse {
+  background: #434548;
+  color: #D9D9D9;
+}
+
+#filled-in, .circle {
+  /*top: 10%;*/
+  /*bottom: 5%;*/
+  text-align: 
+}

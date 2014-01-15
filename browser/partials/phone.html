@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  </head>
+  <link rel="stylesheet" type="text/css" href="../css/signin.css">
+  <body>
+    <div class="text-container"> 
+      What's your phone number?
+      <form class="submitPhone">
+        <label for="phoneNumber">Phone number:</label>
+        <input type="text">
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      $('.submitPhone').on('submit', function(e){
+        e.preventDefault();
+        var phoneNumber = $('.submitPhone')
+        $.ajax({
+          type: "POST",
+          url: "http://localhost:8080/submit"
+          // data: {phone: }
+        })
+      })
+    </script>
+  </body>
+</html>

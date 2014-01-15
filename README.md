@@ -1,4 +1,4 @@
-keep-in-touch
-=============
+keepintouch
+===========
 
-A webapp that integrates with the Facebook API and the Twilio API.
+Keep in touch with your Facebook friends.

@@ -1,9 +1,13 @@
+var mongooseDb = require('.././config/db.js');
+
 exports.submitPhone = function(req,res){ 
-  var userNumber = req.user.phoneNumber;
-  var userName = req.user.userName;
+  // console.log(req.body.num);
+  console.log(req.user);
+  var userPhoneNumber = req.body.num;
+  // var userName = req.user.userName;
   //generate verification code (TODO: this isn't always five digits)
   var verificationCode = Math.floor(Math.random() * 10000);
-  User.findOne({_id : req.user.id}, function(user){
+  mongooseDb.User.findOne({_id : req.user._id}, function(user){
     user.verificationNumber = verificationCode;
     user.save();
   });
@@ -25,6 +29,8 @@ exports.verifyPhone = function(req,res){
 
 
 var sendVerificationSMS = function(phoneNumber,code){
+  phoneNumber = phoneNumber.toString();
+  if (phoneNumber.charAt(0) !== '1'){ phoneNumber = '1' + phoneNumber; }
   twilio.sendMessage({
     to: phoneNumber,
     from: '+14152555631',

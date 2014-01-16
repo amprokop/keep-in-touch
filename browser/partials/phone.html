@@ -8,20 +8,29 @@
       What's your phone number?
       <form class="submitPhone">
         <label for="phoneNumber">Phone number:</label>
-        <input type="text">
+        <input class='phonedigits' type="text">
+        <input type="submit">
       </form>
     </div>
 
     <script type="text/javascript">
       $('.submitPhone').on('submit', function(e){
         e.preventDefault();
-        var phoneNumber = $('.submitPhone')
+        var phoneNumber = $('.phonedigits').val();
+        var phone = {num: phoneNumber};
         $.ajax({
-          type: "POST",
-          url: "http://localhost:8080/submit"
-          // data: {phone: }
-        })
-      })
+          url: '/submit_number',
+          type: 'POST',
+          data: JSON.stringify(phone),
+          contentType: 'application/json',
+          success: function (data) {
+            console.log('number sent');
+          },
+          error: function (data) {
+            console.error('failed to send num');
+          }
+        });
+      });
     </script>
   </body>
 </html>
